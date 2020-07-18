@@ -8,7 +8,7 @@ router.get("/notes", function(req, res) {
     .then(notes => res.json(notes))
     .catch(err => res.status(500).json(err));
 });
-
+// this router posting the notes and responding to JSON FORMAT otherwise catching the error
 router.post("/notes", (req, res) => {
   store
     .addNote(req.body)
@@ -23,5 +23,5 @@ router.delete("/notes/:id", function(req, res) {
     .then(() => res.json({ ok: true }))
     .catch(err => res.status(500).json(err));
 });
-
+//these commands used to export the functionality to other files
 module.exports = router;
